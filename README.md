@@ -1,2 +1,2 @@
 # 4EVR
-VR/AR project
+VR/AR project first implementation
