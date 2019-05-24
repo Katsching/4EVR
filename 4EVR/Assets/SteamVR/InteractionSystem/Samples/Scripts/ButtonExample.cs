@@ -9,14 +9,25 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public GameObject prefab;
 
+        public AudioClip sound;
+
+        private AudioSource source { get { return GetComponent<AudioSource>(); } }
+
         private void Start()
         {
+            gameObject.AddComponent<AudioSource>();
+            source.clip = sound;
             hoverButton.onButtonDown.AddListener(OnButtonDown);
         }
 
         private void OnButtonDown(Hand hand)
         {
-            StartCoroutine(DoPlant());
+            PlaySound();
+        }
+
+        void PlaySound()
+        {
+            source.PlayOneShot(sound);
         }
 
         private IEnumerator DoPlant()

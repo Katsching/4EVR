@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.4evr.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Kai\\Desktop\\4EVR\\4EVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "4EVR [Testing]"
+        }
+      }
+    }
+  ]
+}
