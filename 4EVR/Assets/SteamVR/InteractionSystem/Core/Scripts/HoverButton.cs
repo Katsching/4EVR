@@ -15,8 +15,6 @@ namespace Valve.VR.InteractionSystem
     public class HoverButton : MonoBehaviour
     {
 
-        public AudioSource africa {get {return GetComponent<AudioSource>();}}
-
         public Transform movingPart;
 
         public Vector3 localMoveDistance = new Vector3(0, -0.1f, 0);
@@ -106,7 +104,6 @@ namespace Valve.VR.InteractionSystem
 
             if (buttonDown && onButtonDown != null)
                 onButtonDown.Invoke(lastHoveredHand);
-                africa.Play();
             if (buttonUp && onButtonUp != null)
                 onButtonUp.Invoke(lastHoveredHand);
             if (isEngaged && onButtonIsPressed != null)
