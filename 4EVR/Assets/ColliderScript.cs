@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ColliderScript : MonoBehaviour
 {
+
+    public string complementaryCubeName;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,14 @@ public class ColliderScript : MonoBehaviour
      private void OnTriggerEnter(Collider other)
     {
         {
-            if(other.GetComponent<Rigidbody>() != null)
-                {
-                    var otherMass = other.GetComponent<Rigidbody>().mass;
-                    if(otherMass > 10) {
-                     Debug.Log("entered with 10");
+ 
+                    var otherMass = other.transform.parent.GetComponent<Rigidbody>().mass;
+                    var name = other.transform.parent.name;
+                    Debug.Log(name);
+                    var material = other.GetComponent<MeshRenderer>().material;
+                        if(name == complementaryCubeName) {
+                            Debug.Log("test worked");
                 }
-         }
-            Debug.Log("entered no 10");
         }
     }
 }
