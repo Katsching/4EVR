@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ExcludeTeleport
+  - SnapCube
+  - Leg
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - Torso
+  - Head
+  - Button
+  - PurpleSnapCube
   layers:
   - Default
   - TransparentFX
