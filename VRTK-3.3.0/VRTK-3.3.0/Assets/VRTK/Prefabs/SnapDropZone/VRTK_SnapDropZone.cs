@@ -15,6 +15,17 @@ namespace VRTK
         public GameObject snappedObject;
     }
 
+     public class Global 
+ {
+     public static int count = 0;
+
+    public void testCount(){
+        if (count == 3) {
+            Debug.Log("You won!!");
+        }
+    }
+ }
+
     /// <summary>
     /// Event Payload
     /// </summary>
@@ -39,6 +50,8 @@ namespace VRTK
     [ExecuteInEditMode]
     public class VRTK_SnapDropZone : MonoBehaviour
     {
+
+        public string cubeName;
         /// <summary>
         /// The types of snap on release available.
         /// </summary>
@@ -159,9 +172,17 @@ namespace VRTK
         public virtual void OnObjectUnsnappedFromDropZone(SnapDropZoneEventArgs e)
         {
             UnsnapObject();
+            Global.count = Global.count - 1;
+            Debug.Log(Global.count);
             if (ObjectUnsnappedFromDropZone != null)
             {
                 ObjectUnsnappedFromDropZone(this, e);
+            }
+        }
+
+        private void testWin(){
+            if(Global.count == 3){
+                Debug.Log("YOU WON!!");
             }
         }
 
@@ -704,6 +725,14 @@ namespace VRTK
 
                     isSnapped = true;
                     currentSnappedObject = interactableObjectCheck;
+
+                    //here modified
+                    if(currentSnappedObject.name.Equals(cubeName)){
+                        Global.count = Global.count + 1;
+                        Debug.Log(Global.count);
+                        testWin();
+                    }
+
                     if (cloneNewOnUnsnap)
                     {
                         CreatePermanentClone();

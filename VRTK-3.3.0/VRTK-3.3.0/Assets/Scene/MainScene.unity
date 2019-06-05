@@ -9806,6 +9806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa31935730602684ca098655260a7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeName: BlueCube
   highlightObjectPrefab: {fileID: 487144728}
   snapType: 1
   snapDuration: 0
@@ -15707,6 +15708,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 83348072}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &429354975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429354974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87dd25b9b9828b489834ca49924f154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 1676808521}
+  resultString: QWER
 --- !u!1 &429665197
 GameObject:
   m_ObjectHideFlags: 0
@@ -22970,6 +22985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa31935730602684ca098655260a7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeName: 
   highlightObjectPrefab: {fileID: 487144728}
   snapType: 1
   snapDuration: 0
@@ -26011,7 +26027,7 @@ MonoBehaviour:
   operation: 1
   checkType: 1
   identifiers:
-  - PurpleSnapCube
+  - SnapCube
 --- !u!114 &726843020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26024,6 +26040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa31935730602684ca098655260a7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeName: PurpleCube
   highlightObjectPrefab: {fileID: 487144728}
   snapType: 1
   snapDuration: 0
@@ -60300,7 +60317,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.5, y: 0.5, z: 10.77}
+  m_ConnectedAnchor: {x: 0.09, y: 0.5, z: 10.77}
   serializedVersion: 2
   m_Spring: 10000
   m_Damper: 5000
@@ -60341,6 +60358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa31935730602684ca098655260a7c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeName: RedCube
   highlightObjectPrefab: {fileID: 487144728}
   snapType: 1
   snapDuration: 0
@@ -87748,6 +87766,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1236770035}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2106096950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106096946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87dd25b9b9828b489834ca49924f154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 620913054}
+  resultString: 1234
 --- !u!1 &2116293365
 GameObject:
   m_ObjectHideFlags: 0
