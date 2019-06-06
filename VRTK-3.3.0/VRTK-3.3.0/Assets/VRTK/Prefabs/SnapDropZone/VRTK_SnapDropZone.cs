@@ -172,8 +172,7 @@ namespace VRTK
         public virtual void OnObjectUnsnappedFromDropZone(SnapDropZoneEventArgs e)
         {
             UnsnapObject();
-            Global.count = Global.count - 1;
-            Debug.Log(Global.count);
+
             if (ObjectUnsnappedFromDropZone != null)
             {
                 ObjectUnsnappedFromDropZone(this, e);
@@ -807,8 +806,14 @@ namespace VRTK
         {
             if (currentSnappedObject != null)
             {
+                
+                if(currentSnappedObject.name.Equals(cubeName)) {
+                        Global.count = Global.count - 1;
+                        Debug.Log(Global.count);
+                }
                 ResetPermanentCloneColliders(currentSnappedObject.gameObject);
                 RemoveCurrentValidSnapObject(currentSnappedObject);
+
             }
 
             isSnapped = false;

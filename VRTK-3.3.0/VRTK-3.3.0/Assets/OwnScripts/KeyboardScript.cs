@@ -11,6 +11,8 @@
         public string outputOnMax = "Maximum Reached";
         public string outputOnMin = "Minimum Reached";
 
+        public bool isDeleteButton = false;
+
         public string letter;
 
         public GameObject textDescription;
@@ -39,20 +41,29 @@
 
         protected virtual void MaxLimitReached(object sender, ControllableEventArgs e)
         {
-            if (outputOnMax != "")
-            {
+            if(!string.IsNullOrWhiteSpace(letter)) {
                 Debug.Log(outputOnMax);
                 Text t = textDescription.GetComponent<Text>();
-                t.text = t.text + letter;            
+                t.text = t.text + letter;     
             }
+            else {
+                if(isDeleteButton) {
+                    delete();
+                }
+            }
+
         }
 
         protected virtual void MinLimitReached(object sender, ControllableEventArgs e)
         {
-            if (outputOnMin != "")
-            {
-                Debug.Log(outputOnMin);
-            }
+            Debug.Log(outputOnMin);
+   
+        }
+
+        protected void delete(){
+            Text t = textDescription.GetComponent<Text>();
+            t.text = t.text + letter;
+            t.text = t.text.Substring(0, t.text.Length - 1);
         }
     }
 
