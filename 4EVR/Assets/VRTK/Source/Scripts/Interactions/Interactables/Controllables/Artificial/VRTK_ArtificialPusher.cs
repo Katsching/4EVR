@@ -32,7 +32,7 @@ namespace VRTK.Controllables.ArtificialBased
         public float restingPosition = 0f;
         [Tooltip("The normalized value that the pusher can be from the `Resting Position` before the pusher is considered to be resting when not being interacted with.")]
         [Range(0f, 1f)]
-        public float restingPositionThreshold = 0.01f;
+        public float restingPositionThreshold = 0.1f;
         [Tooltip("The normalized position of the pusher between the original position and the pressed position. `0f` will set the pusher position to the original position, `1f` will set the pusher position to the pressed position.")]
         [Range(0f, 1f)]
         [SerializeField]
