@@ -9,10 +9,14 @@ public class CountdownScript : MonoBehaviour
     public float timeLeft;
     public  ParticleSystem explosion;
 
+    public GameObject endScreenDescription;
+
+    public GameObject endScreenBackGround;
+
 
     void Start()
     {
-        
+        endScreenBackGround.transform.localScale = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -34,5 +38,9 @@ public class CountdownScript : MonoBehaviour
 
     private void GameOver(){
         explosion.Play();
+        endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
+        Text t = endScreenDescription.GetComponent<Text>();
+        t.text = "You lost!";
     }
+    
 }

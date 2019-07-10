@@ -5,6 +5,7 @@ namespace VRTK
     using System.Collections;
     using System.Collections.Generic;
     using Highlighters;
+    using UnityEngine.UI;
 
     /// <summary>
     /// Event Payload
@@ -19,9 +20,10 @@ namespace VRTK
  {
      public static int count = 0;
 
+
     public void testCount(){
         if (count == 3) {
-            Debug.Log("You won!!");
+           
         }
     }
  }
@@ -52,6 +54,9 @@ namespace VRTK
     {
 
         public string cubeName;
+        
+         public GameObject endScreenDescription;
+        public GameObject endScreenBackGround;
         /// <summary>
         /// The types of snap on release available.
         /// </summary>
@@ -181,7 +186,10 @@ namespace VRTK
 
         private void testWin(){
             if(Global.count == 3){
-                Debug.Log("YOU WON!!");
+                endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
+                Text t = endScreenDescription.GetComponent<Text>();
+                t.color = Color.green;
+                t.text = "Congratulations, you won!!";
             }
         }
 
