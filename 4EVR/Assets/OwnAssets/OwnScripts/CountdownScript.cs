@@ -15,10 +15,16 @@ public class CountdownScript : MonoBehaviour
 
     public Font myNewFont;
 
+    public AudioClip explosionSound;
+
+    private AudioSource explosionSource { get { return GetComponent<AudioSource>(); } }
+
 
     void Start()
     {
         endScreenBackGround.transform.localScale = new Vector3(0, 0, 0);
+        gameObject.AddComponent<AudioSource>();
+        explosionSource.clip = explosionSound;
     }
 
     // Update is called once per frame
@@ -40,6 +46,7 @@ public class CountdownScript : MonoBehaviour
 
     private void GameOver(){
         explosion.Play();
+        explosionSource.PlayOneShot(explosionSound);
         endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
         Text t = endScreenDescription.GetComponent<Text>();
         t.font = myNewFont;
