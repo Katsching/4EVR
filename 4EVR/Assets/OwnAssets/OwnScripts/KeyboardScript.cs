@@ -13,9 +13,15 @@
 
         public bool isDeleteButton = false;
 
+        public bool isEnterButton = false;
+
         public string letter;
 
         public GameObject textDescription;
+
+        public GameObject cube;
+
+        public string resultString;
 
 
         private void Start()
@@ -41,14 +47,31 @@
 
         protected virtual void MaxLimitReached(object sender, ControllableEventArgs e)
         {
+            Text t = textDescription.GetComponent<Text>();
             if(!string.IsNullOrWhiteSpace(letter)) {
                 Debug.Log(outputOnMax);
-                Text t = textDescription.GetComponent<Text>();
-                t.text = t.text + letter;     
+                if(t.text.Equals("CRRCT!")) {
+                }
+                
+                else if(t.text.Equals("WRNG!")) {
+                    t.text = letter;
+                } 
+                else if(t.text.Length < 6) {
+                        t.text = t.text + letter;    
+                }
             }
             else {
                 if(isDeleteButton) {
-                    delete();
+                    if(t.text.Equals("WRNG!")) {
+                        t.text = "";
+                    }
+                    else if(!t.text.Equals("CRRCT!")) {
+                        delete();
+                    } 
+                  
+                }
+                if(isEnterButton) {
+                    enter();
                 }
             }
 
@@ -64,6 +87,17 @@
             Text t = textDescription.GetComponent<Text>();
             t.text = t.text + letter;
             t.text = t.text.Substring(0, t.text.Length - 1);
+        }
+
+        protected void enter(){
+            Text text = textDescription.GetComponent<Text>();
+            if(text.text.Equals(resultString)){
+                text.text = "CRRCT!";
+                MeshRenderer render = cube.GetComponentInChildren<MeshRenderer>();
+                render.enabled = true;
+            } else {
+                text.text = "WRNG!";
+            }
         }
     }
 

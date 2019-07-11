@@ -57,10 +57,12 @@
   <ItemGroup>
      <Compile Include="Assets\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\CountdownScript.cs" />
+     <Compile Include="Assets\OwnAssets\OwnScripts\CubeScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\DescriptionScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\EndScreenScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\KeyboardScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\MusicButtonReactor.cs" />
+     <Compile Include="Assets\OwnAssets\OwnScripts\RemoveCube.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
