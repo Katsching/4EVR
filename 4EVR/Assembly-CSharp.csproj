@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\3DTOYS\rotatecamera.cs" />
+     <Compile Include="Assets\BackgroundMusicScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\CountdownScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\CubeScript.cs" />
      <Compile Include="Assets\OwnAssets\OwnScripts\DescriptionScript.cs" />

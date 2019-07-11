@@ -13,6 +13,8 @@ public class CountdownScript : MonoBehaviour
 
     public GameObject endScreenBackGround;
 
+    public Font myNewFont;
+
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class CountdownScript : MonoBehaviour
         explosion.Play();
         endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
         Text t = endScreenDescription.GetComponent<Text>();
+        t.font = myNewFont;
         t.text = "You lost!";
     }
     

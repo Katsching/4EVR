@@ -50,22 +50,22 @@
             Text t = textDescription.GetComponent<Text>();
             if(!string.IsNullOrWhiteSpace(letter)) {
                 Debug.Log(outputOnMax);
-                if(t.text.Equals("CRRCT!")) {
+                if(t.text.Equals("CORRECT!")) {
                 }
                 
-                else if(t.text.Equals("WRNG!")) {
+                else if(t.text.Equals("WRONG!")) {
                     t.text = letter;
                 } 
-                else if(t.text.Length < 6) {
+                else if(t.text.Length < 8) {
                         t.text = t.text + letter;    
                 }
             }
             else {
                 if(isDeleteButton) {
-                    if(t.text.Equals("WRNG!")) {
+                    if(t.text.Equals("WRONG!")) {
                         t.text = "";
                     }
-                    else if(!t.text.Equals("CRRCT!")) {
+                    else if(!t.text.Equals("CORRECT!")) {
                         delete();
                     } 
                   
@@ -91,12 +91,16 @@
 
         protected void enter(){
             Text text = textDescription.GetComponent<Text>();
-            if(text.text.Equals(resultString)){
-                text.text = "CRRCT!";
+            if(text.text.Equals("CORRECT!")){
+
+            }
+
+            else if(text.text.Equals(resultString)){
+                text.text = "CORRECT!";
                 MeshRenderer render = cube.GetComponentInChildren<MeshRenderer>();
                 render.enabled = true;
             } else {
-                text.text = "WRNG!";
+                text.text = "WRONG!";
             }
         }
     }

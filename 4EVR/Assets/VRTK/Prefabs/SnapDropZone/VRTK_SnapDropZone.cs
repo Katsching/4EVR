@@ -189,7 +189,7 @@ namespace VRTK
                 endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
                 Text t = endScreenDescription.GetComponent<Text>();
                 t.color = Color.green;
-                t.text = "Congratulations, you won!!";
+                t.text = "Congratulations, you won!";
             }
         }
 
