@@ -23,6 +23,6 @@ public class BackgroundMusicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       source.volume = Mathf.Lerp(source.volume, 0.75f, 0.00166f * Time.deltaTime);
+       source.volume = Mathf.Lerp(source.volume, 0.75f, 0.00166f / 4 * Time.deltaTime);
     }
 }
