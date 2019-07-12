@@ -19,6 +19,8 @@ public class CountdownScript : MonoBehaviour
 
     private AudioSource explosionSource { get { return GetComponent<AudioSource>(); } }
 
+    public bool isFirstBoard;
+
 
     void Start()
     {
@@ -38,6 +40,7 @@ public class CountdownScript : MonoBehaviour
 
             if ( timeLeft < 0 )
             {
+                enabled = false;
                 GameOver();
             }
 
@@ -46,11 +49,12 @@ public class CountdownScript : MonoBehaviour
 
     private void GameOver(){
         explosion.Play();
-        explosionSource.PlayOneShot(explosionSound);
+        if(isFirstBoard) {
+            explosionSource.PlayOneShot(explosionSound);
+        }
         endScreenBackGround.transform.localScale = new Vector3(1, 1, 1);
         Text t = endScreenDescription.GetComponent<Text>();
         t.font = myNewFont;
         t.text = "You lost!";
     }
-    
 }
